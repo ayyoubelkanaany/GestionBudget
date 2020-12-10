@@ -7,7 +7,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { BudgetComponent } from './components/budget/budget.component';
-
+import { BudgetDepartementComponent } from './components/budget-departement/budget-departement.component';
+import {RoutingModule} from './routes/routing/routing.module';
 
 @NgModule({
   declarations: [
@@ -15,11 +16,13 @@ import { BudgetComponent } from './components/budget/budget.component';
     HeaderComponent,
     FooterComponent,
     SideMenuComponent,
-    BudgetComponent
+    BudgetComponent,
+    BudgetDepartementComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule
+    RouterModule,
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

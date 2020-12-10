@@ -1,0 +1,78 @@
+<div class="container-fluid">
+  <div class="row mt-5 mx-2">
+    <form class="form-row mx-0">
+      <div class="form-group mb-2">
+        <label for="annee">Annee</label><br>
+        <input type="text"  class="form-control mx-2" id="annee">
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+        <button class="btn btn-info cherche">Chercher</button>
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="montantInv" >M. Total</label>
+        <input type="text" class="form-control mx-2" id="montantInv" >
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="montantFonc">M. Fonctionnement</label>
+        <input type="text" class="form-control mx-2" id="montantFonc" >
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="montantTot" >M. Investissement</label>
+        <input type="text" class="form-control mx-2" id="montantTot">
+      </div>
+    </form>
+  </div>
+  <div class="row mx-3 mt-4">
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" (click)="showDropdown()"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dropdown button
+      </button>
+      <div class="dropdown-menu" [ngClass]="{'show': toggleFlag} " aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" (click)="showDropdown()"  href="#">Action</a>
+        <a class="dropdown-item" (click)="showDropdown()"  href="#">Another action</a>
+        <a class="dropdown-item" (click)="showDropdown()"  href="#">Something else here</a>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5 mx-2">
+    <form class="form-row mx-0">
+      <div class="form-group mx-sm-3 mb-2">
+        <button class="btn btn-info cherche">sauvegarder</button>
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="montantInv2" >M. Total</label>
+        <input type="text" class="form-control mx-2" id="montantInv2" >
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="montantFonc2">M. Fonctionnement</label>
+        <input type="text" class="form-control mx-2" id="montantFonc2" >
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="montantTot2" >M. Investissement</label>
+        <input type="text" class="form-control mx-2" id="montantTot2">
+      </div>
+    </form>
+  </div>
+
+  <div class="row mx-4 mt-3 ">
+    <table class="table">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Budget Annee</th>
+        <th scope="col">M. Investisement</th>
+        <th scope="col">M. Fonctionement</th>
+        <th scope="col">M. InvestisementRestant</th>
+        <th scope="col">M. FonctionementRestant</th>
+        <th scope="col">M. Total</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
