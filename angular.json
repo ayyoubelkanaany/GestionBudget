@@ -87,7 +87,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "../node_modules/font-awesome/css/font-awesome.min.css"
             ],
             "scripts": []
           }
@@ -120,5 +122,8 @@
       }
     }
   },
-  "defaultProject": "GestionBudget"
+  "defaultProject": "GestionBudget",
+  "cli": {
+    "analytics": "2f58fbd8-5281-4ec2-a6c0-aa43b4fea79d"
+  }
 }
