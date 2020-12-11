@@ -1,9 +1,9 @@
-import {BudgeDepartement} from './budge-departement';
+import {BudgetDepartement} from './budget-departement';
 import {CompteComptable} from './compte-comptable';
 
 export class BudgetDepartementCompteComptable {
    id: number;
-   budgetDepartement: BudgeDepartement;
+   budgetDepartement: BudgetDepartement;
    comptable: CompteComptable;
    montant: number;
 }

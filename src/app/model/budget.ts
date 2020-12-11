@@ -1,4 +1,4 @@
-import {BudgeDepartement} from './budge-departement';
+import {BudgetDepartement} from './budget-departement';
 import {BudgetCompteComptable} from './budget-compte-comptable';
 
 export class Budget {
@@ -11,6 +11,6 @@ export class Budget {
   montantInvestisementRestant:number;
   montantFonctionementRestant:number;
   montantTotal:number;
-  budgetDepartement: Array<BudgeDepartement>;
+  budgetDepartement: Array<BudgetDepartement>;
   budgetCompteComptable: Array<BudgetCompteComptable>;
 }

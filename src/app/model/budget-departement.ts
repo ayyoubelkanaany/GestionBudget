@@ -2,7 +2,7 @@ import {Budget} from './budget';
 import {Departement} from './departement';
 import {BudgetDepartementCompteComptable} from './budget-departement-compte-comptable';
 
-export class BudgeDepartement {
+export class BudgetDepartement {
   id: number;
   budget: Budget;
   departement: Departement;

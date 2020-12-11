@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {BudgeDepartement} from '../../model/budge-departement';
+import {BudgetDepartement} from '../../model/budget-departement';
 import {BudgeDepartementService} from '../../service/budge-departement.service';
 
 @Component({
@@ -9,7 +9,7 @@ import {BudgeDepartementService} from '../../service/budge-departement.service';
 })
 export class BudgetDepartementComponent implements OnInit {
   toggleFlag = false;
-  budgetdepartement: BudgeDepartement;
+  budgetdepartement: BudgetDepartement;
   constructor(private budgetdepartementservide: BudgeDepartementService) { }
 
   ngOnInit(): void {
