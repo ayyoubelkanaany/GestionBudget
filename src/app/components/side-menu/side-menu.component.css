@@ -1,0 +1,26 @@
+div{
+  width:100%;
+  height: 625px;
+}
+
+ul {
+  margin-top: 40px;
+  width:100%;
+}
+ul li{
+  font-size: 15px;
+  text-decoration: none;
+  list-style: none;
+  border: solid 1px white;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  padding: 10px 5px;
+  margin:20px auto;
+  width:100%;
+
+}
+ul li a{
+  text-decoration: none;
+  color: white;
+}

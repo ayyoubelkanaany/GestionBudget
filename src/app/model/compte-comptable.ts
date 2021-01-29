@@ -4,7 +4,7 @@ export class CompteComptable {
   id: number;
   libelle: String;
   reference: String;
-  montantMax: number;
+  montant: number;
   BudgetCompteComptable: BudgetCompteComptable;
 
 }

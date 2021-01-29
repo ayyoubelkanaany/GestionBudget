@@ -8,8 +8,8 @@ export class BudgetDepartement {
   departement: Departement;
   budgetDepartementCompteComptable: Array<BudgetDepartementCompteComptable>;
   montantInvestisement: number;
-   montantFonctionement:number;
-   montantInvestisementRestant:number;
-  montantFonctionementRestant:number;
-  montantTotal:number;
+  montantFonctionement: number;
+  montantInvestisementRestant: number;
+  montantFonctionementRestant: number;
+  montantTotal: number;
 }

@@ -1,0 +1,95 @@
+<div class="container-fluid">
+  <div class="row mt-3">
+    <div class="col-md-2">
+      <label for="annee">Annee</label>
+      <input type="text"  class="form-control  annee" id="annee"  >
+    </div>
+    <div class=" col-md-2">
+      <button class="btn btn-info cherche">Chercher</button>
+    </div>
+    <div class="col-md-3">
+      <div class="dropdown">
+        <button class="btn btn-info dropdown-toggle cherche" (click)="showDropdown2()"  type="button" id="choseBudgetDepartement" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          BudgetDepartement
+        </button>
+        <div class="dropdown-menu" [ngClass]="{'show': toggleFlag3} " aria-labelledby="choseBudgetDepartement" >
+          <a class="dropdown-item" (click)="showDropdown2()"  (mouseleave)="showDropdown2()"  href="#">Action</a>
+          <a class="dropdown-item" (click)="showDropdown2()"  (mouseleave)="showDropdown2()"href="#">Another action</a>
+          <a class="dropdown-item" (click)="showDropdown2()"  (mouseleave)="showDropdown2()"href="#">Something else here</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-3">
+      <label for="montantInv" >M. Total</label>
+      <input type="text" class="form-control montant" id="montantInv" name="montantInv" [(ngModel)]="budgetdepartement.montantInvestisement">
+    </div>
+    <div class="col-md-3">
+      <label for="montantFonc">M. Fonctionnement</label>
+      <input type="text" class="form-control montant" id="montantFonc"  name="montantFonc" [(ngModel)]="budgetdepartement.montantFonctionement">
+    </div>
+    <div class="col-md-3">
+      <label for="montantTot" >M. Investissement</label>
+      <input type="text" class="form-control montant" id="montantTot" name="montantTot" [(ngModel)]="budgetdepartement.montantTotal">
+    </div>
+    <div class="col-md-3"  style="margin-top: auto">
+      <h6 >Budget du departement : {{selectedDepartement}}</h6>
+    </div>
+  </div>
+  <div class="row my-3 ml-1">
+    <h6>Repartir sur les comptes comtables</h6>
+  </div>
+  <div class="row mt-4">
+    <div class="col-md-3">
+      <label for="montantInv2" >Montant</label>
+      <input type="text" class="form-control montant" id="montantInv2" name="montantInv2" [(ngModel)]="compteComptable.montant" >
+    </div>
+    <div class="col-md-3">
+      <div class="dropdown cherche">
+        <button class="btn btn-info dropdown-toggle" (click)="showDropdown()"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          CompteComptable
+        </button>
+        <div class="dropdown-menu" [ngClass]="{'show': toggleFlag} " aria-labelledby="dropdownMenuButton" >
+          <a class="dropdown-item" (click)="showDropdown()"  (mouseleave)="showDropdown()"  href="#">Action</a>
+          <a class="dropdown-item" (click)="showDropdown()"  (mouseleave)="showDropdown()"href="#">Another action</a>
+          <a class="dropdown-item" (click)="showDropdown()"  (mouseleave)="showDropdown()"href="#">Something else here</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6"></div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-md-2">
+      <button class=" btn btn-info" (click)="addToList()">sauvegarder</button>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <table class="table">
+        <thead class="thead-dark">
+        <tr>
+          <th scope="col">Montant</th>
+          <th scope="col">Comptable</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>2000</td>
+          <td>5000</td>
+        </tr>
+        <tr>
+          <td>2000</td>
+          <td>5000</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <button class="btn btn-info " (click)="save()">Valider</button>
+    </div>
+  </div>
+</div>
