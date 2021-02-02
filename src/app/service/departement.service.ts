@@ -1,16 +1,19 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Departement} from '../model/departement';
+import {Budget} from '../model/budget.model';
+import {HttpClient} from '@angular/common/http';
+import {Departement} from '../model/departement.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DepartementService {
-  Url = 'http://localhost:8090/departements';
-
+  Url = 'http://localhost:8090/departement';
   constructor(private http: HttpClient) { }
-  getAll(): Observable <Array<Departement>>{
-    return this.http.get<Array<Departement>>(this.Url);
+  getByLibelle(libelle: String): Observable<Departement>{
+    return this.http.get<Departement>(this.Url + '/libelle/' + libelle);
+  }
+  getAllDepartement(): Observable<Departement[]>{
+    return this.http.get<Departement[]>(this.Url + '/all');
   }
 }

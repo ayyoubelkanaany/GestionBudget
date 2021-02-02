@@ -7,6 +7,7 @@ import {BudgetDepartementCompteComptableComponent} from '../../components/budget
 import {CompteComptableComponent} from '../../components/compte-comptable/compte-comptable.component';
 import {AcceuilComponent} from '../../components/acceuil/acceuil.component';
 import {EditBudgetDepartementComponent} from '../../components/edit-budget-departement/edit-budget-departement.component';
+import {DepartementComponent} from '../../components/departement/departement.component';
 
 
 export const routes: Routes = [
@@ -15,6 +16,8 @@ export const routes: Routes = [
   {path: 'comptecomptable', component: CompteComptableComponent},
   {path: 'edit', component: EditBudgetDepartementComponent},
   {path: 'accueil', component: AcceuilComponent},
+  {path: 'departement', component: DepartementComponent},
+  {path: 'budget', component: BudgetComponent},
   {path: '', component: AcceuilComponent}
 ];
 

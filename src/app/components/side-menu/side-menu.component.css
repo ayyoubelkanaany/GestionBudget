@@ -1,6 +1,7 @@
-div{
+.container-fluid{
+  height: 730px;
   width:100%;
-  height: 625px;
+
 }
 
 ul {

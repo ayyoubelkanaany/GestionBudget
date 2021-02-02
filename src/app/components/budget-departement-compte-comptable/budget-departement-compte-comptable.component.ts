@@ -55,11 +55,8 @@ export class BudgetDepartementCompteComptableComponent implements OnInit {
   }
 
 
-
-
-
    getAllDepartement(){
-    this.departementService.getAll().subscribe(data => {
+    this.departementService.getAllDepartement().subscribe(data => {
       console.log(data);
       this.departements = data;
     });

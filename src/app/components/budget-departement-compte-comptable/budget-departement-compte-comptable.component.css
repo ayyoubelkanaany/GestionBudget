@@ -15,3 +15,11 @@ body{
 .montant{
 
 }
+.container-fluid{
+  width: 120%;
+}
+
+.cherche{
+  margin-top:26px ;
+  margin-right: 20px;
+}

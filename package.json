@@ -22,9 +22,11 @@
     "@angular/platform-browser-dynamic": "~11.0.3",
     "@angular/router": "~11.0.3",
     "angular-font-awesome": "^3.1.2",
+    "angular-hammer": "^2.2.0",
     "bootstrap": "^4.5.3",
     "font-awesome": "^4.7.0",
     "fontawesome": "^5.6.3",
+    "jquery": "^3.5.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

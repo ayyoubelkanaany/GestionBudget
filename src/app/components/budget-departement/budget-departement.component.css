@@ -1,7 +1,8 @@
-body{
-  margin: 0px;
-  padding: 0px;
+.parent{
+  height: 800px;
+  width: 200%;
 }
+
 .cherche{
   margin-top:32px ;margin-right: 20px;
 }
@@ -20,4 +21,9 @@ body{
 }
 .head{
   margin: auto 3%;
+}
+
+.recherche{
+  margin-top:26px ;
+  margin-right: 20px;
 }
