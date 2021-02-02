@@ -1,0 +1,55 @@
+.a{
+  cursor: pointer;
+}
+.dropdown-menu{
+  background-color: gray;
+}
+
+.dropdown-item:hover{
+  background-color: gray;
+}
+
+.btn-outline-sm{
+  display: inline-block;
+  padding: 0.875rem 1.5rem 0.875rem 1.5rem;
+  border: 0.125rem solid gray;
+  border-radius: 2rem;
+  background-color: transparent;
+  color: gray;
+  font: 700 0.875rem/0 "Open Sans", sans-serif;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-outline-sm:hover {
+  background-color: lightgray;
+  color: #00FFA9;
+  text-decoration: none;
+}
+
+.navbar-custom .nav-item .btn-outline-sm {
+  border: 0.125rem solid gray;
+  color: gray;
+}
+
+.navbar-custom .nav-item .btn-outline-sm:hover {
+  background-color: gray;
+  color: white;
+}
+img{
+  border-radius: 20px;
+}
+
+.navbar-custom,.navbar-dark,fixed-top{
+  background-color: gray;
+}
+
+hr.style18 {
+  margin-top: 20px;
+  height: 30px;
+  border-style: solid;
+  border-color: #8c8b8b;
+  border-width: 1px 0 0 0;
+}
+
+

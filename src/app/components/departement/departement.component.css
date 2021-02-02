@@ -1,0 +1,49 @@
+/* Structure */
+table {
+  width: 100%;
+  background-color: gray;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  float: left;
+  margin-right: 20px;
+}
+
+.mat-header-cell{
+  text-align: center;
+}
+
+.add_btn{
+  float: right;
+}
+.search_btn{
+  float: left;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: gray !important;
+}
+
+::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: gray !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: gray !important;;
+}
+.container{
+  margin-top: 50px;
+  width: 200%;
+}
+
+.a{
+  cursor: pointer;
+}
+
+h1{
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
