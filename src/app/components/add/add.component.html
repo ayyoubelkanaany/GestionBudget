@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Ajout Departement</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Ref:</mat-label>
+    <input matInput [(ngModel)]="this.departement.refDepartement">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Libelle:</mat-label>
+    <input matInput [(ngModel)]="this.departement.libelle">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="Ajouter()" cdkFocusInitial>Ajouter</button>
+</div>

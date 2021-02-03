@@ -1,44 +1,46 @@
-<div class="container-fluid partent">
-  <div class="row head mt-4" >
+<div class="container-fluid ">
+  <div class="row head mt-4  " >
     <div class="col-md-3 ">
-      <label for="annee">Annee</label>
-      <input type="number"  class="form-control" id="annee" [(ngModel)]="this.annee" >
+      <label for="refBudget">Reference Budget</label>
+      <input type="text"  class="form-control" id="refBudget" [(ngModel)]="this.refBudget" >
     </div>
     <div class="col-md-3">
-      <label for="departement">Departement</label>
-      <input type="text"  class="form-control " id="departement" [(ngModel)]="this.departement"  >
+      <label for="refDepartement">Reference Departement</label>
+      <input type="text"  class="form-control " id="refDepartement" [(ngModel)]="this.refDepartement"  >
     </div>
     <div class="col-md-2">
-      <button class="btn btn-info recherche" (click)="recherche()">recherche</button>
+      <button class="btn  recherche" (click)="recherche()">recherche</button>
     </div>
   </div>
-  <div class="row  mt-5">
+  <div class="row  mt-5  justify-content-center">
     <div class="col-md-12">
     <table class="table">
-      <thead class="bg-info">
+      <thead class="">
       <tr>
-        <th scope="col">Annee</th>
+        <th scope="col">Reference </th>
+        <th scope="col">Reference Budget</th>
         <th scope="col">Montant Investisement</th>
         <th scope="col">Montant Fonctionement</th>
         <th scope="col">Montant Total</th>
-        <th scope="col">Departement</th>
+        <th scope="col">Reference Departement</th>
         <th scope="col">operation</th>
       </tr>
       </thead>
       <tbody *ngFor="let budgDep of this.budgetdepartements">
       <tr>
-        <td>{{budgDep.budget.annee}}</td>
+        <td>{{budgDep.reference}}</td>
+        <td>{{budgDep.refBudget}}</td>
         <td>{{budgDep.montantInvestisement}}</td>
         <td>{{budgDep.montantFonctionement}}</td>
         <td>{{budgDep.montantTotal}}</td>
-        <td>{{budgDep.departement.libelle}}</td>
+        <td>{{budgDep.refDepartement}}</td>
         <td>
-          <button class="btn btn-danger mx-1" (click)="delete(budgDep)"> <i class="fa fa-trash " ></i></button>
-          <button mat-button class="btn btn-info mx-1 " (click)="openDialog()"> <i class="fa fa-edit " > </i></button>
+          <button  class="btn btn-danger mx-1" (click)="delete(budgDep)"> <i class="fa fa-trash " ></i></button>
+          <button  class="btn btn-info mx-1 " (click)="openDialog(budgDep)"> <i class="fa fa-edit " > </i></button>
         </td>
       </tr>
       </tbody>
     </table>
-  </div>
+</div>
 </div>
 </div>

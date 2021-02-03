@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {Budget} from '../../model/budget';
 import {CompteComptable} from '../../model/compte-comptable';
 import {BudgetDepartementCompteComptable} from '../../model/budget-departement-compte-comptable';
-import {BudgetDepartement} from '../../model/budget-departement';
 import {BudgeDepartementService} from '../../service/budge-departement.service';
 import {DepartementService} from '../../service/departement.service';
-import {Departement} from '../../model/departement';
 import {CompteComptableService} from '../../service/compte-comptable.service';
-
+import {Budget} from '../../model/budget.model';
+import {Departement} from '../../model/departement.model';
+import {BudgetDepartement} from '../../model/budget-departement.model';
+import {BudgetDepartementCompteComptableService} from '../../service/budget-departement-compte-comptable.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-budget-departement-compte-comptable',
   templateUrl: './budget-departement-compte-comptable.component.html',
@@ -29,11 +30,13 @@ export class BudgetDepartementCompteComptableComponent implements OnInit {
   toggleFlag3 = false;
   toggleFlag = false;
   annee: number;
-  constructor(private compteComptableService: CompteComptableService,private budgeDepartementService : BudgeDepartementService,private departementService: DepartementService) { }
+
+  constructor(private compteComptableService: CompteComptableService,private toastr: ToastrService,private budgeDepartementService : BudgeDepartementService,private departementService: DepartementService, private budgetDepartementCompteComptableService: BudgetDepartementCompteComptableService) { }
 
   ngOnInit(): void {
     this.getAllDepartement();
     this.getAllCompteComptable();
+    this.findAll();
   }
 
   getByBudgetAnnee(annee: number){
@@ -42,18 +45,25 @@ export class BudgetDepartementCompteComptableComponent implements OnInit {
       this.budgetdepartements = data;
     });
   }
-  addToList() {
-    this.budgetdepartementcomptecomptable.comptable = this.compteComptable;
-    this.budgetdepartementcomptecomptables.push(this.clone(this.budgetdepartementcomptecomptable));
-  }
 
   save() {
-    this.budgetdepartement.budgetDepartementCompteComptable = this.budgetdepartementcomptecomptables;
-     this.budgeDepartementService.save(this.budgetdepartement).subscribe((data) => {
-       console.log(data);
-     });
+      this.compteComptableService.save(this.compteComptable).subscribe( data => {
+      this.budgetdepartementcomptecomptable.montant = this.compteComptable.montant;
+      this.budgetdepartementcomptecomptable.refComptable = this.compteComptable.refCompteComptable;
+      this.budgetdepartementcomptecomptable.refBudgetDepartementCompteComptable = this.compteComptable.refCompteComptable + '' + this.budgetdepartement.reference;
+      this.budgetDepartementCompteComptableService.save(this.budgetdepartementcomptecomptable).subscribe( next => {
+        if (next === -2){
+          this.toastr.error('Ce budget Departement n existe pas')
+          console.log('Ce budget Departement n existe pas');
+        }else if ( next === 1){
+          this.toastr.success('inseré')
+          console.log('inseré');
+          this.ngOnInit();
+        }
+        }
+      );
+    });
   }
-
 
    getAllDepartement(){
     this.departementService.getAllDepartement().subscribe(data => {
@@ -67,14 +77,10 @@ export class BudgetDepartementCompteComptableComponent implements OnInit {
      this.compteComptables = data;
    });
    }
-
-
-
-
   clone(budgetDepartementCompteComptable: BudgetDepartementCompteComptable): BudgetDepartementCompteComptable{
     const BDCC: BudgetDepartementCompteComptable = null;
-    BDCC.budgetDepartement = budgetDepartementCompteComptable.budgetDepartement;
-    BDCC.comptable = budgetDepartementCompteComptable.comptable;
+    BDCC.refBudgetDepartement = budgetDepartementCompteComptable.refBudgetDepartement;
+    BDCC.refComptable = budgetDepartementCompteComptable.refComptable;
     BDCC.montant = budgetDepartementCompteComptable.montant;
     return BDCC;
   }
@@ -86,5 +92,11 @@ export class BudgetDepartementCompteComptableComponent implements OnInit {
   showDropdown2() {
     console.log(this.toggleFlag);
     this.toggleFlag3 = !this.toggleFlag3;
+  }
+
+  findAll (){
+    this.budgetDepartementCompteComptableService.getAll().subscribe(data => {
+      this.budgetdepartementcomptecomptables = data;
+    });
   }
 }

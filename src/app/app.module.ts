@@ -24,6 +24,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
+import { AddComponent } from './components/add/add.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import {MatSelectModule} from '@angular/material/select';
     BudgetDepartementCompteComptableComponent,
     CompteComptableComponent,
     EditBudgetDepartementComponent,
-    DepartementComponent
+    DepartementComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,12 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    MatSelectModule
+    MatSelectModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

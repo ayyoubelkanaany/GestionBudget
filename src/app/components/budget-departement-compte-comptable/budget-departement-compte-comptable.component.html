@@ -1,63 +1,25 @@
 <div class="container-fluid">
-  <div class="row mt-3">
-      <div class="col-md-2">
-        <label for="annee">Annee</label>
-        <input type="number"  class="form-control  annee" id="annee" [(ngModel)]="annee" >
-      </div>
-      <div class=" col-md-2">
-        <button class="btn btn-info cherche"  (click)="getByBudgetAnnee(this.annee)">Chercher</button>
-      </div>
-      <div class="col-md-3">
-        <div class="dropdown">
-          <button class="btn btn-info dropdown-toggle cherche" (click)="showDropdown2()"  type="button" id="choseBudgetDepartement" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            BudgetDepartement
-          </button>
-          <div class="dropdown-menu" [ngClass]="{'show': toggleFlag3} " aria-labelledby="choseBudgetDepartement" *ngFor="let budgetdep of budgetdepartements">
-            <a class="dropdown-item" (click)="showDropdown2()" >{{budgetdep.departement.libelle}}</a>
-          </div>
-        </div>
-      </div>
-  </div>
-  <div class="row mt-5">
-      <div class="col-md-3">
-        <label for="montantInv" >M. Total</label>
-        <input type="number" class="form-control montant" id="montantInv" name="montantInv" [(ngModel)]="budgetdepartement.montantInvestisement">
-      </div>
-      <div class="col-md-3">
-        <label for="montantFonc">M. Fonctionnement</label>
-        <input type="number" class="form-control montant" id="montantFonc"  name="montantFonc" [(ngModel)]="budgetdepartement.montantFonctionement">
-      </div>
-      <div class="col-md-3">
-        <label for="montantTot" >M. Investissement</label>
-        <input type="number" class="form-control montant" id="montantTot" name="montantTot" [(ngModel)]="budgetdepartement.montantTotal">
-      </div>
-    <div class="col-md-3"  style="margin-top: auto">
-      <h6 >Budget du departement : {{selectedDepartement}}</h6>
-    </div>
-  </div>
   <div class="row my-3 ml-1">
-    <h6>Repartir sur les comptes comtables</h6>
+    <h2>Gerer les comptes comtables des Budget Departement:</h2>
   </div>
   <div class="row mt-4">
+    <div class="col-md-3">
+      <label for="ref" >Ref CompteComptable</label>
+      <input type="text" class="form-control montant" id="ref" name="ref" [(ngModel)]="compteComptable.refCompteComptable" >
+    </div>
     <div class="col-md-3">
       <label for="montantInv2" >Montant</label>
       <input type="number" class="form-control montant" id="montantInv2" name="montantInv2" [(ngModel)]="compteComptable.montant" >
     </div>
     <div class="col-md-3">
-      <div class="dropdown cherche">
-        <button class="btn btn-info dropdown-toggle" (click)="showDropdown()"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          CompteComptable
-        </button>
-        <div class="dropdown-menu" [ngClass]="{'show': toggleFlag} " aria-labelledby="dropdownMenuButton" *ngFor="let comp of compteComptables" >
-          <a class="dropdown-item" (click)="showDropdown()"  >{{comp.libelle}}</a>
-        </div>
-      </div>
+      <label for="montantInv2" >Ref Budget Departement</label>
+      <input type="text" class="form-control montant" id="refB" name="refB" [(ngModel)]="this.budgetdepartementcomptecomptable.refBudgetDepartement" >
     </div>
     <div class="col-md-6"></div>
   </div>
   <div class="row mt-2">
     <div class="col-md-2">
-      <button class=" btn btn-info" (click)="addToList()">sauvegarder</button>
+      <button class=" btn " (click)="save()">sauvegarder</button>
     </div>
   </div>
 
@@ -67,25 +29,20 @@
         <thead class="thead-dark">
         <tr>
           <th scope="col">Montant</th>
-          <th scope="col">Comptable</th>
+          <th scope="col">RefBudgetDepartement</th>
+          <th scope="col">RefCompteComptable</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>2000</td>
-          <td>5000</td>
-        </tr>
-        <tr>
-          <td>2000</td>
-          <td>5000</td>
+        <tr *ngFor="let b of this.budgetdepartementcomptecomptables">
+          <td>{{b.montant}}</td>
+          <td>{{b.refBudgetDepartement}}</td>
+          <td>{{b.refComptable}}</td>
         </tr>
         </tbody>
       </table>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-2">
-      <button class="btn btn-info " (click)="save()">Valider</button>
-    </div>
 </div>
 </div>

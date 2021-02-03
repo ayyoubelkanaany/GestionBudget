@@ -7,12 +7,12 @@ import {Budget} from '../model/budget.model';
   providedIn: 'root'
 })
 export class BudgetService {
-  Url = "http://localhost:8090/budgets";
+  Url = "http://localhost:8098/budgets";
   constructor(private http:HttpClient) { }
   getById(id: String):Observable<Budget>{
     return this.http.get<Budget>(this.Url+"/id/"+id);
   }
-  getByAnnee(annee: number):Observable<Budget>{
+  getByAnnee(annee: String):Observable<Budget>{
     return this.http.get<Budget>(this.Url+"/annee/"+annee);
   }
   save(budget: Budget): Observable<number>{

@@ -1,10 +1,19 @@
 <h2 mat-dialog-title>Install Angular</h2>
 <mat-dialog-content class="mat-typography">
-  <h3>Develop across all platforms</h3>
-  <p>Learn one way to build applications with Angular and reuse your code and abilities to build
-    apps for any deployment target. For web, mobile web, native mobile and native desktop.</p>
+  <div class="row mt-5 mx-2">
+    <form class="form-row mx-0">
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="montantFonc2">M. Fonctionnement</label>
+        <input type="number" class="form-control mx-2" id="montantFonc2" name="montantFonc2" [(ngModel)]="this.montantFonctionnement">
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="montantInv2">M. Investissement</label>
+        <input type="number" class="form-control mx-2" id="montantInv2" name="montantInv2" [(ngModel)]=" this.montantInvestisement">
+      </div>
+    </form>
+  </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+  <button mat-button mat-dialog-close>annuler</button>
+  <button mat-button (click)="save()" cdkFocusInitial>sauvegarder</button>
 </mat-dialog-actions>

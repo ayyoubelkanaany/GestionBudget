@@ -1,13 +1,15 @@
-import {Budget} from "./budget.model";
-import {Departement} from "./departement.model";
+import { BudgetDepartementCompteComptable } from "./budget-departement-compte-comptable";
+
 
 export class BudgetDepartement {
   id: number;
-  budget: Budget;
-  departement: Departement;
-  montantInvestisement: number;
-  montantFonctionement:number;
-  montantInvestisementRestant:number;
-  montantFonctionementRestant:number;
-  montantTotal:number;
+  montantInvestisement: String;
+  montantFonctionement: String;
+  montantInvestisementRestant: String;
+  montantFonctionementRestant: String;
+  montantTotal:String;
+	refBudget:String;
+	reference:String;
+	refDepartement:String;
+  budgetDepartementCompteComptableVo:Array<BudgetDepartementCompteComptable> = new Array<BudgetDepartementCompteComptable>();
 }

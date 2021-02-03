@@ -4,11 +4,16 @@
 }
 
 .cherche{
-  margin-top:32px ;margin-right: 20px;
+  margin-top:32px ;
+  margin-right: 20px;
 }
 .table{
   width: 100%;
-  margin: auto 5%;
+ }
+ .table thead{
+  width: 100%;
+  background-color: gray;
+  color: white;
  }
 .annee{
   width:100px;
@@ -17,6 +22,8 @@
   width:150px;
 }
 .recherche{
+  background-color: gray;
+  color: white;
   margin-top: 30px;
 }
 .head{

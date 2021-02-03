@@ -10,7 +10,7 @@
     </button>
   </mat-form-field>
   <button mat-raised-button class="search_btn" mat-button (click)="getByLibelle(value)">Chercher</button>
-  <button mat-raised-button class="add_btn" mat-button>Ajouter un departement</button>
+  <button mat-raised-button class="add_btn" mat-button (click)="openDialog()">Ajouter un departement</button>
 
   <table mat-table [dataSource]="this.departements" #mytable class="my-table mat-elevation-z8">
 
@@ -20,7 +20,7 @@
     <!-- Id Column -->
     <ng-container matColumnDef="reference">
       <th mat-header-cell *matHeaderCellDef> REF </th>
-      <td mat-cell *matCellDef="let element"> {{element.reference}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.refDepartement}} </td>
     </ng-container>
 
     <!-- Name Column -->
@@ -34,7 +34,7 @@
       <th mat-header-cell *matHeaderCellDef> Action </th>
       <td mat-cell *matCellDef="let element" class="action-link">
         <a class="a" >Modifier</a> |
-        <a class="a">Supprimer</a>
+        <a class="a" (click)="deleteRowData(element.libelle)">Supprimer</a>
       </td>
     </ng-container>
 

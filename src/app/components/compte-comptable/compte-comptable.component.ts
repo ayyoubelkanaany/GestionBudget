@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Budget} from '../../model/budget';
-import {CompteComptable} from '../../model/compte-comptable';
-import {BudgetDepartementCompteComptable} from '../../model/budget-departement-compte-comptable';
-import {BudgetDepartement} from '../../model/budget-departement';
-import {BudgeDepartementService} from '../../service/budge-departement.service';
+import { Budget } from 'src/app/model/budget.model';
+import { BudgetDepartement } from 'src/app/model/budget-departement.model';
+import { BudgetDepartementCompteComptable } from 'src/app/model/budget-departement-compte-comptable';
+import { CompteComptable } from 'src/app/model/compte-comptable';
+import { BudgeDepartementService } from 'src/app/service/budge-departement.service';
 
 @Component({
   selector: 'app-compte-comptable',
@@ -26,34 +26,5 @@ export class CompteComptableComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  addToList() {
-    this.budgetdepartementcomptecomptable.comptable = this.compteComptable;
-    this.budgetdepartementcomptecomptables.push(this.clone(this.budgetdepartementcomptecomptable));
-  }
-
-  save() {
-    this.budgetdepartement.budgetDepartementCompteComptable = this.budgetdepartementcomptecomptables;
-    this.budgeDepartementService.save(this.budgetdepartement).subscribe((data) => {
-      console.log(data);
-    })
-  }
-
-  clone(budgetDepartementCompteComptable: BudgetDepartementCompteComptable): BudgetDepartementCompteComptable{
-    const BDCC: BudgetDepartementCompteComptable = null;
-    BDCC.budgetDepartement = budgetDepartementCompteComptable.budgetDepartement;
-    BDCC.comptable = budgetDepartementCompteComptable.comptable;
-    BDCC.montant = budgetDepartementCompteComptable.montant;
-    return BDCC;
-  }
-
-  showDropdown() {
-    console.log(this.toggleFlag);
-    this.toggleFlag = !this.toggleFlag;
-  }
-
-  showDropdown2() {
-    console.log(this.toggleFlag);
-    this.toggleFlag3 = !this.toggleFlag3;
-  }
-
+  
 }
